@@ -1,0 +1,61 @@
+Мои замечания 23.08.2018.
+-------------------------
+
+После установки Laravel получили такую выдачу:
+Writing lock file
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/tinker
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+> @php artisan key:generate
+Application key [base64:9KU4elm3EwdTT9ZwhGLJXflvkZ24Do1XCN8KnPZ7GTg=] set successfully.
+
+Проект находится в папке:
+/var/www/html/lara-project
+
+Настройки сервера находятся в файле:
+/etc/apache2/sites-availablelaravel.conf
+
+<VirtualHost *:80>
+    ServerName laradomain.tld
+
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/lara-project/public
+
+    <Directory /var/www/html/lara-project>
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+Перезагрузка сервера:
+$ sudo service apache2 restart
+
+Проверка статуса сервиса apache2:
+$ sudo systemctl status apache2
+
+Вход в терминал MySQL:
+$ sudo apt install mysql-server
+
+Просмотр метода аутентификации для каждого из пользователей MySQL:
+mysql>SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+Выход из терминала MySQL:
+mysql>exit
+
+
+
+Мои замечания 27.08.2018.
+-------------------------
+
+1. Создал Laravel-проект /home/olegko/web/App-uad/
+
+
+
+
+
